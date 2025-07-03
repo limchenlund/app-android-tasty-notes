@@ -4,6 +4,8 @@
     <string name="all_recipes">All Recipes</string>
     <string name="types">Types</string>
     <string name="add_new_recipe">Add New Recipe</string>
+    <string name="edit_recipe">Edit Recipe</string>
+    <string name="update_recipe">Update Recipe</string>
     <string name="recipe_name">Recipe Name</string>
     <string name="recipe_name_hint">Enter recipe name</string>
     <string name="recipe_image_optional">Recipe Image (Optional)</string>
@@ -15,6 +17,7 @@
     <string name="recipe_types">Recipe Type</string>
     <string name="save_recipe">Save Recipe</string>
     <string name="success_recipe_saved">Recipe saved successfully!</string>
+    <string name="recipe_updated">Recipe updated successfully!</string>
     <string name="recipe_details">Recipe Details</string>
     <string name="delete_recipe">Delete Recipe</string>
     <string name="confirm_delete_recipe">Are you sure you want to delete this recipe?</string>
@@ -27,6 +30,7 @@
     <string name="error_loading_recipes">Error loading recipes</string>
     <string name="error_failed_to_load_recipes">Failed to load recipes: %1$s</string>
     <string name="error_failed_to_save_recipe">Failed to save recipe: %1$s</string>
+    <string name="error_failed_to_update_recipe">Failed to update recipe: %1$s</string>
     <string name="error_failed_to_load_recipe">Failed to load recipe: %1$s</string>
     <string name="error_failed_to_delete_recipe">Failed to delete recipe: %1$s</string>
     <string name="error_recipe_not_found">Recipe not found</string>

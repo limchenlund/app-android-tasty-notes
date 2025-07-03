@@ -51,6 +51,15 @@ class RecipeDetailActivity : AppCompatActivity() {
         this.loadRecipeData()
     }
 
+    override fun onResume() {
+        super.onResume()
+        // Reload recipe data when returning from edit activity
+        val recipeId = intent.getLongExtra(EXTRA_RECIPE_ID, -1)
+        if (recipeId != -1L) {
+            viewModel.loadRecipe(recipeId)
+        }
+    }
+
     private fun setupViewModel() {
         val database = AppDatabase.getDatabase(this)
         val repository = RecipeRepository(database.recipeDao())
@@ -79,7 +88,10 @@ class RecipeDetailActivity : AppCompatActivity() {
         }
 
         this.editImageView.setOnClickListener {
-            // TODO add edit functionality
+            currentRecipe?.let { recipe ->
+                val intent = EditRecipeActivity.newIntent(this, recipe.id)
+                startActivity(intent)
+            }
         }
     }
 
@@ -122,6 +134,7 @@ class RecipeDetailActivity : AppCompatActivity() {
         this.recipeNameTextView.text = recipe.name
         
         // Load image if available
+        // TODO for some reason the image here does not load, to come back and fix it
         if (!recipe.imageUri.isNullOrBlank()) {
             Glide.with(this@RecipeDetailActivity)
                 .load(recipe.imageUri)
