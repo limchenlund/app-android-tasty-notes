@@ -26,7 +26,10 @@ class RecipeDetailActivity : AppCompatActivity() {
     private lateinit var ingredientsTextView: TextView
     private lateinit var stepsTextView: TextView
     private lateinit var backImageView: ImageView
+    private lateinit var deleteImageView: ImageView
+    private lateinit var editImageView: ImageView
     private lateinit var viewModel: RecipeDetailViewModel
+    private var currentRecipe: Recipe? = null
 
     companion object {
         private const val EXTRA_RECIPE_ID = "recipe_id"
@@ -62,11 +65,21 @@ class RecipeDetailActivity : AppCompatActivity() {
         this.ingredientsTextView = findViewById(R.id.recipe_detail_ingredients_tv)
         this.stepsTextView = findViewById(R.id.recipe_detail_steps_tv)
         this.backImageView = findViewById(R.id.recipe_detail_back_iv)
+        this.deleteImageView = findViewById(R.id.recipe_detail_delete_iv)
+        this.editImageView = findViewById(R.id.recipe_detail_edit_iv)
     }
 
     private fun setupClickListeners() {
         this.backImageView.setOnClickListener {
             finish()
+        }
+
+        this.deleteImageView.setOnClickListener {
+            showDeleteConfirmationDialog()
+        }
+
+        this.editImageView.setOnClickListener {
+            // TODO add edit functionality
         }
     }
 
@@ -93,9 +106,19 @@ class RecipeDetailActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+        viewModel.deleteSuccess.observe(this) { success ->
+            if (success) {
+                Toast.makeText(this, getString(R.string.recipe_deleted), Toast.LENGTH_SHORT).show()
+                finish()
+            }
+        }
     }
 
     private fun displayRecipe(recipe: Recipe) {
+        // Store the current recipe for deletion
+        this.currentRecipe = recipe
+        
         this.recipeNameTextView.text = recipe.name
         
         // Load image if available
@@ -142,6 +165,25 @@ class RecipeDetailActivity : AppCompatActivity() {
             
         } catch (e: Exception) {
             this.recipeTypeTextView.text = getString(R.string.unknown_type)
+        }
+    }
+
+    private fun showDeleteConfirmationDialog() {
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.delete_recipe))
+            .setMessage(getString(R.string.confirm_delete_recipe))
+            .setPositiveButton(getString(R.string.delete)) { _, _ ->
+                deleteRecipe()
+            }
+            .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+    private fun deleteRecipe() {
+        currentRecipe?.let { recipe ->
+            viewModel.deleteRecipe(recipe)
         }
     }
 } 

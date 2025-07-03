@@ -28,8 +28,26 @@
             android:textSize="18sp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:contentDescription="@string/image_edit_icon"
+            android:id="@+id/recipe_detail_edit_iv"
+            android:src="@drawable/ic_edit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:contentDescription="@string/image_delete_icon"
+            android:layout_marginStart="15dp"
+            android:id="@+id/recipe_detail_delete_iv"
+            android:src="@drawable/ic_delete"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:tint="@color/white" />
 
     </LinearLayout>
 
@@ -44,6 +62,7 @@
             android:padding="16dp">
 
             <ImageView
+                android:contentDescription="@string/image_recipe_image"
                 android:id="@+id/recipe_detail_image_iv"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"

@@ -21,6 +21,9 @@ class RecipeDetailViewModel(
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
     
+    private val _deleteSuccess = MutableLiveData<Boolean>()
+    val deleteSuccess: LiveData<Boolean> = _deleteSuccess
+    
     fun loadRecipe(recipeId: Long) {
         viewModelScope.launch {
             try {
@@ -32,6 +35,17 @@ class RecipeDetailViewModel(
                 }
             } catch (e: Exception) {
                 _error.value = context.getString(R.string.error_failed_to_load_recipe, e.message)
+            }
+        }
+    }
+    
+    fun deleteRecipe(recipe: Recipe) {
+        viewModelScope.launch {
+            try {
+                repository.deleteRecipe(recipe)
+                _deleteSuccess.value = true
+            } catch (e: Exception) {
+                _error.value = context.getString(R.string.error_failed_to_delete_recipe, e.message)
             }
         }
     }

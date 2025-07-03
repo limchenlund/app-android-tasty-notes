@@ -36,12 +36,14 @@
             android:layout_width="30dp"
             android:layout_height="30dp"/>
 
+        <!--If needed to implement search, hide for now-->
         <ImageView
             android:id="@+id/activity_main_search_iv"
             android:contentDescription="@string/image_search_icon"
             android:layout_marginStart="15dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_search"
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"/>
 
