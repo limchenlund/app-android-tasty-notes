@@ -30,16 +30,18 @@ class MainActivity : AppCompatActivity() {
         this.viewPagerAdapter = RecipeViewPagerAdapter(this@MainActivity)
         this.viewPager.adapter = viewPagerAdapter
 
+        // Show add recipe page
         addImageView.setOnClickListener {
             val intent = Intent(this, AddRecipeActivity::class.java)
             startActivity(intent)
         }
 
+        // Setup tab and view pager for all recipe and types
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> getString(R.string.all_recipes)
                 1 -> getString(R.string.types)
-                else -> getString(R.string.all_recipes)
+                else -> "-"
             }
         }.attach()
     }

@@ -5,7 +5,7 @@
     <string name="types">Types</string>
     <string name="add_new_recipe">Add New Recipe</string>
     <string name="recipe_name">Recipe Name</string>
-    <string name="recipe_name_hint">Name your recipe!</string>
+    <string name="recipe_name_hint">Enter recipe name</string>
     <string name="recipe_image_optional">Recipe Image (Optional)</string>
     <string name="pick_image">Pick Image</string>
     <string name="ingredients">Ingredients</string>
@@ -14,9 +14,25 @@
     <string name="steps_hint">1. Cut the tomatoes\n2. Cut the carrots\n3. Boil the potatoes</string>
     <string name="recipe_types">Recipe Type</string>
     <string name="save_recipe">Save Recipe</string>
+    <string name="success_recipe_saved">Recipe saved successfully!</string>
 
-    <!--Error message-->
+    <!--Error messages-->
     <string name="error_loading_recipe_types">Error loading recipe types</string>
+    <string name="error_loading_recipes">Error loading recipes</string>
+    <string name="error_failed_to_load_recipes">Failed to load recipes: %1$s</string>
+    <string name="error_failed_to_save_recipe">Failed to save recipe: %1$s</string>
+    <string name="no_recipes_found">No recipes found</string>
+    
+    <!--Validation messages-->
+    <string name="validation_recipe_name_required">Recipe name is required</string>
+    <string name="validation_ingredients_required">At least one ingredient is required</string>
+    <string name="validation_steps_required">At least one step is required</string>
+    <string name="validation_recipe_type_required">Please select a recipe type</string>
+    
+    
+    
+    <!--Click messages-->
+    <string name="clicked_recipe">Clicked: %1$s</string>
 
     <!--For image content description-->
     <string name="image_main_icon">Main icon for display</string>

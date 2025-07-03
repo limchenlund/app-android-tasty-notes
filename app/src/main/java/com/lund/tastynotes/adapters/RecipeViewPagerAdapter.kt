@@ -14,7 +14,7 @@ class RecipeViewPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(
         return when (position) {
             0 -> AllRecipesFragment()
             1 -> AllTypesFragment()
-            else -> AllRecipesFragment()
+            else -> Fragment()
         }
     }
 }

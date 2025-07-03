@@ -9,13 +9,19 @@ import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.lund.tastynotes.R
+import com.lund.tastynotes.database.AppDatabase
 import com.lund.tastynotes.models.RecipeType
+import com.lund.tastynotes.repository.RecipeRepository
+import com.lund.tastynotes.utils.Constants
+import com.lund.tastynotes.viewmodels.AddRecipeViewModel
+import com.lund.tastynotes.viewmodels.AddRecipeViewModelFactory
 import java.io.InputStream
 
 class AddRecipeActivity : AppCompatActivity() {
@@ -31,15 +37,24 @@ class AddRecipeActivity : AppCompatActivity() {
     private var imageUri: Uri? = null
     private lateinit var recipeTypes: List<RecipeType>
     private lateinit var imagePickerLauncher: ActivityResultLauncher<String>
+    private lateinit var viewModel: AddRecipeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_recipe)
 
+        this.setupViewModel()
         this.findAllViews()
         this.setupImagePickerLauncher()
         this.loadRecipeTypes()
         this.setupClickListeners()
+    }
+
+    private fun setupViewModel() {
+        val database = AppDatabase.getDatabase(this)
+        val repository = RecipeRepository(database.recipeDao())
+        val factory = AddRecipeViewModelFactory(repository, this)
+        viewModel = ViewModelProvider(this, factory)[AddRecipeViewModel::class.java]
     }
 
     private fun findAllViews() {
@@ -56,6 +71,7 @@ class AddRecipeActivity : AppCompatActivity() {
     private fun setupImagePickerLauncher() {
         this.imagePickerLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             if (uri != null) {
+                imageUri = uri
                 Glide.with(this@AddRecipeActivity).load(uri).into(this.recipeImageView)
             }
         }
@@ -63,7 +79,7 @@ class AddRecipeActivity : AppCompatActivity() {
 
     private fun loadRecipeTypes() {
         try {
-            val inputStream: InputStream = assets.open("recipetypes.json")
+            val inputStream: InputStream = assets.open(Constants.RECIPE_FILE_NAME)
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
@@ -87,11 +103,42 @@ class AddRecipeActivity : AppCompatActivity() {
         }
 
         this.saveButton.setOnClickListener {
-            // TODO save to DB here later
+            saveRecipe()
         }
 
         this.backImageView.setOnClickListener {
             finish()
         }
+    }
+
+    // Save recipe into local DB
+    private fun saveRecipe() {
+        val name = recipeNameEditText.text.toString()
+        val ingredients = ingredientsEditText.text.toString()
+        val steps = stepsEditText.text.toString()
+        val selectedPosition = recipeTypeSpinner.selectedItemPosition
+        
+        if (selectedPosition == -1) {
+            Toast.makeText(this, getString(R.string.validation_recipe_type_required), Toast.LENGTH_SHORT).show()
+            return
+        }
+        
+        val selectedRecipeType = recipeTypes[selectedPosition]
+        val imageUriString = imageUri?.toString()
+
+        viewModel.saveRecipe(
+            name = name,
+            imageUri = imageUriString,
+            ingredients = ingredients,
+            steps = steps,
+            recipeTypeId = selectedRecipeType.id,
+            onSuccess = { recipeId ->
+                Toast.makeText(this, getString(R.string.success_recipe_saved), Toast.LENGTH_SHORT).show()
+                finish()
+            },
+            onError = { errorMessage ->
+                Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+            }
+        )
     }
 } 

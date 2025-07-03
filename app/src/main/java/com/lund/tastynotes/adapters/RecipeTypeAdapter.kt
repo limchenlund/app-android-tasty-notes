@@ -17,6 +17,7 @@ class RecipeTypeAdapter(
         private val nameTextView: TextView = itemView.findViewById(R.id.item_recipe_type_name_tv)
 
         fun bind(recipeType: RecipeType) {
+            // Make first character uppercase for better visual
             nameTextView.text = recipeType.name.replaceFirstChar { it.uppercase() }
             itemView.setOnClickListener { onItemClick(recipeType) }
         }

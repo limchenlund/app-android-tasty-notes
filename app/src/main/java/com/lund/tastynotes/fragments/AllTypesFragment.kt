@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken
 import com.lund.tastynotes.R
 import com.lund.tastynotes.adapters.RecipeTypeAdapter
 import com.lund.tastynotes.models.RecipeType
+import com.lund.tastynotes.utils.Constants
 
 class AllTypesFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
@@ -34,7 +35,7 @@ class AllTypesFragment : Fragment() {
 
     private fun setupAdapter() {
         try {
-            val inputStream = requireContext().assets.open("recipetypes.json")
+            val inputStream = requireContext().assets.open(Constants.RECIPE_FILE_NAME)
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
