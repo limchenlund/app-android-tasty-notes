@@ -1,5 +1,6 @@
 package com.lund.tastynotes.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,11 @@ class MainActivity : AppCompatActivity() {
     private fun setupViews() {
         this.viewPagerAdapter = RecipeViewPagerAdapter(this@MainActivity)
         this.viewPager.adapter = viewPagerAdapter
+
+        addImageView.setOnClickListener {
+            val intent = Intent(this, AddRecipeActivity::class.java)
+            startActivity(intent)
+        }
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {

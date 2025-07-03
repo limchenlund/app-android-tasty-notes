@@ -3,6 +3,17 @@
     <string name="app_name">Tasty Notes</string>
     <string name="all_recipes">All Recipes</string>
     <string name="types">Types</string>
+    <string name="add_new_recipe">Add New Recipe</string>
+    <string name="recipe_name">Recipe Name</string>
+    <string name="recipe_name_hint">Name your recipe!</string>
+    <string name="recipe_image_optional">Recipe Image (Optional)</string>
+    <string name="pick_image">Pick Image</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="ingredients_hint">1. Tomato\n2. Potato\n3. Carrot</string>
+    <string name="steps">Steps</string>
+    <string name="steps_hint">1. Cut the tomatoes\n2. Cut the carrots\n3. Boil the potatoes</string>
+    <string name="recipe_types">Recipe Type</string>
+    <string name="save_recipe">Save Recipe</string>
 
     <!--Error message-->
     <string name="error_loading_recipe_types">Error loading recipe types</string>
