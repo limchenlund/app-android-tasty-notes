@@ -1,7 +1,11 @@
 <resources>
+    <!-- General text-->
     <string name="app_name">Tasty Notes</string>
     <string name="all_recipes">All Recipes</string>
     <string name="types">Types</string>
+
+    <!--Error message-->
+    <string name="error_loading_recipe_types">Error loading recipe types</string>
 
     <!--For image content description-->
     <string name="image_main_icon">Main icon for display</string>

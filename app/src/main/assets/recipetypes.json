@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "name": "breakfast"
+    },
+    {
+        "id": 2,
+        "name": "brunch"
+    },
+    {
+        "id": 3,
+        "name": "lunch"
+    },
+    {
+        "id": 4,
+        "name": "dinner"
+    },
+    {
+        "id": 5,
+        "name": "dessert"
+    },
+    {
+        "id": 6,
+        "name": "bake-goods"
+    },
+    {
+        "id": 7,
+        "name": "snack"
+    },
+    {
+        "id": 8,
+        "name": "appetizer"
+    },
+    {
+        "id": 9,
+        "name": "side-dish"
+    },
+    {
+        "id": 10,
+        "name": "salad"
+    },
+    {
+        "id": 11,
+        "name": "soup"
+    },
+    {
+        "id": 12,
+        "name": "beverage"
+    },
+    {
+        "id": 13,
+        "name": "sauce"
+    },
+    {
+        "id": 14,
+        "name": "condiment"
+    },
+    {
+        "id": 15,
+        "name": "marinade"
+    },
+    {
+        "id": 16,
+        "name": "dip"
+    },
+    {
+        "id": 17,
+        "name": "smoothie"
+    }
+]
