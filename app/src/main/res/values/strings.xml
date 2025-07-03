@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tasty Notes</string>
+    <string name="all_recipes">All Recipes</string>
+    <string name="types">Types</string>
+
+    <!--For image content description-->
+    <string name="image_main_icon">Main icon for display</string>
+    <string name="image_add_icon">Add icon to add more recipe</string>
+    <string name="image_search_icon">Search icon to search for recipe</string>
 </resources>

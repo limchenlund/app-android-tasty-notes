@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/image_main_icon" />
+
+        <TextView
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textColor="@color/main_color"
+            android:textSize="18sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/activity_main_add_iv"
+            android:contentDescription="@string/image_add_icon"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_add"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:id="@+id/activity_main_search_iv"
+            android:contentDescription="@string/image_search_icon"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_search"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/activity_main_tl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/activity_main_vp2"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+</LinearLayout>
