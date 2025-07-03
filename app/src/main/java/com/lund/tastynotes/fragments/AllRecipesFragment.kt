@@ -1,5 +1,6 @@
 package com.lund.tastynotes.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lund.tastynotes.R
+import com.lund.tastynotes.activities.RecipeDetailActivity
 import com.lund.tastynotes.adapters.RecipeAdapter
 import com.lund.tastynotes.database.AppDatabase
 import com.lund.tastynotes.models.Recipe
@@ -27,9 +29,9 @@ class AllRecipesFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_all_recipes, container, false)
         
-        setupViewModel()
-        setupRecyclerView(view)
-        observeRecipes()
+        this.setupViewModel()
+        this.setupRecyclerView(view)
+        this.observeRecipes()
         
         return view
     }
@@ -42,17 +44,17 @@ class AllRecipesFragment : Fragment() {
     }
 
     private fun setupRecyclerView(view: View) {
-        recyclerView = view.findViewById(R.id.all_recipes_recycler_view)
+        this.recyclerView = view.findViewById(R.id.all_recipes_recycler_view)
         
         // To show 2 item per row
-        recyclerView.layoutManager = GridLayoutManager(context, 2)
+        this.recyclerView.layoutManager = GridLayoutManager(context, 2)
         
         // Initialize adapter with empty list while waiting for data to load
-        recipeAdapter = RecipeAdapter(emptyList()) { recipe ->
+        this.recipeAdapter = RecipeAdapter(emptyList()) { recipe ->
             onRecipeClick(recipe)
         }
         
-        recyclerView.adapter = recipeAdapter
+        this.recyclerView.adapter = this.recipeAdapter
     }
 
     private fun observeRecipes() {
@@ -75,7 +77,8 @@ class AllRecipesFragment : Fragment() {
     }
 
     private fun onRecipeClick(recipe: Recipe) {
-        // TODO show recipe detail activity
+        val intent = RecipeDetailActivity.newIntent(requireContext(), recipe.id)
+        startActivity(intent)
     }
 
     override fun onResume() {

@@ -9,6 +9,8 @@ class RecipeRepository(private val recipeDao: RecipeDao) {
     fun getAllRecipes(): Flow<List<Recipe>> = recipeDao.getAllRecipes()
     
     fun getRecipesByType(typeId: Int): Flow<List<Recipe>> = recipeDao.getRecipesByType(typeId)
+
+    suspend fun getRecipeById(recipeId: Long): Recipe? = recipeDao.getRecipeById(recipeId)
     
     suspend fun insertRecipe(recipe: Recipe): Long = recipeDao.insertRecipe(recipe)
     

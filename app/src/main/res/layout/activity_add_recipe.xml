@@ -80,6 +80,7 @@
                 android:layout_marginTop="5dp" />
 
             <Button
+                android:layout_marginTop="5dp"
                 android:textColor="@color/main_color"
                 android:background="@drawable/background_button"
                 android:id="@+id/activity_add_recipe_pick_image_btn"

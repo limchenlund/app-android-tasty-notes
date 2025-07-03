@@ -72,7 +72,11 @@ class AddRecipeActivity : AppCompatActivity() {
         this.imagePickerLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             if (uri != null) {
                 imageUri = uri
-                Glide.with(this@AddRecipeActivity).load(uri).into(this.recipeImageView)
+                Glide.with(this@AddRecipeActivity)
+                    .load(uri)
+                    .placeholder(R.drawable.ic_food_placeholder)
+                    .error(R.drawable.ic_food_placeholder)
+                    .into(this.recipeImageView)
             }
         }
     }
