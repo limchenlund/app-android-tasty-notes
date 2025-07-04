@@ -2,7 +2,7 @@
   "recipes": [
     {
       "name": "Classic Margherita Pizza",
-      "imageUri": "",
+      "imageUri": "sample_images/margherita_pizza.jpg",
       "ingredients": [
         "2 cups all-purpose flour",
         "1 cup warm water",
@@ -26,7 +26,7 @@
     },
     {
       "name": "Chicken Tikka Masala",
-      "imageUri": "",
+      "imageUri": "sample_images/chicken_tikka_masala.jpg",
       "ingredients": [
         "1 lb chicken breast, cubed",
         "1 cup yogurt",
@@ -51,7 +51,7 @@
     },
     {
       "name": "Chocolate Chip Cookies",
-      "imageUri": "",
+      "imageUri": "sample_images/chocolate_chip_cookies.jpg",
       "ingredients": [
         "2 1/4 cups all-purpose flour",
         "1 cup butter, softened",
@@ -76,7 +76,7 @@
     },
     {
       "name": "Beef Stir Fry",
-      "imageUri": "",
+      "imageUri": "sample_images/beef_stir_fry.jpg",
       "ingredients": [
         "1 lb beef sirloin, sliced thin",
         "2 cups mixed vegetables",
@@ -101,7 +101,7 @@
     },
     {
       "name": "Caesar Salad",
-      "imageUri": "",
+      "imageUri": "sample_images/caesar_salad.jpg",
       "ingredients": [
         "1 head romaine lettuce, chopped",
         "1/2 cup parmesan cheese, grated",
@@ -125,7 +125,7 @@
     },
     {
       "name": "Spaghetti Carbonara",
-      "imageUri": "",
+      "imageUri": "sample_images/spaghetti_carbonara.jpg",
       "ingredients": [
         "1 lb spaghetti",
         "4 large eggs",
@@ -148,7 +148,7 @@
     },
     {
       "name": "Chicken Noodle Soup",
-      "imageUri": "",
+      "imageUri": "sample_images/chicken_noodle_soup.jpg",
       "ingredients": [
         "1 whole chicken, cut up",
         "2 carrots, chopped",
@@ -172,7 +172,7 @@
     },
     {
       "name": "Chocolate Lava Cake",
-      "imageUri": "",
+      "imageUri": "sample_images/chocolate_lava_cake.jpg",
       "ingredients": [
         "4 oz dark chocolate",
         "1/2 cup butter",

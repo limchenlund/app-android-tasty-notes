@@ -28,7 +28,7 @@ class SampleDataLoader(private val context: Context, private val recipeRepositor
                 sampleRecipes.forEach { sampleRecipe ->
                     val recipe = Recipe(
                         name = sampleRecipe.name,
-                        imageUri = sampleRecipe.imageUri,
+                        imageUri = convertAssetPathToUri(sampleRecipe.imageUri),
                         ingredients = sampleRecipe.ingredients.joinToString("\n"),
                         steps = sampleRecipe.steps.joinToString("\n"),
                         recipeTypeId = sampleRecipe.recipeTypeId
@@ -38,6 +38,14 @@ class SampleDataLoader(private val context: Context, private val recipeRepositor
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+        }
+    }
+    
+    private fun convertAssetPathToUri(assetPath: String): String {
+        return if (assetPath.isNotEmpty()) {
+            Constants.ASSETS_IMAGE_PREFIX + assetPath
+        } else {
+            ""
         }
     }
     
