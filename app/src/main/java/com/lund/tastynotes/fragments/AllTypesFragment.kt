@@ -1,5 +1,6 @@
 package com.lund.tastynotes.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.lund.tastynotes.R
+import com.lund.tastynotes.activities.RecipeListActivity
 import com.lund.tastynotes.adapters.RecipeTypeAdapter
 import com.lund.tastynotes.models.RecipeType
 import com.lund.tastynotes.utils.Constants
@@ -47,7 +49,8 @@ class AllTypesFragment : Fragment() {
             val recipeTypes: List<RecipeType> = gson.fromJson(json, type)
             
             this.recipeTypeAdapter = RecipeTypeAdapter(recipeTypes) { recipeType ->
-                // TODO show recipe page
+                val intent = RecipeListActivity.newIntent(requireContext(), recipeType.id)
+                startActivity(intent)
             }
             this.recyclerView.adapter = recipeTypeAdapter
             
