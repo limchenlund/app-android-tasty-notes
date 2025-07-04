@@ -52,6 +52,9 @@
     <string name="image_add_icon">Add icon to add more recipe</string>
     <string name="image_search_icon">Search icon to search for recipe</string>
     <string name="image_recipe_image">Recipe image</string>
+    <string name="image_recipe_image_full_screen">Recipe image in full screen</string>
     <string name="image_edit_icon">Edit icon to edit recipe</string>
     <string name="image_delete_icon">Delete icon to delete recipe</string>
+    <string name="image_back_icon">Back icon to go back</string>
+    <string name="image_reset_zoom_icon">Reset zoom icon to reset image zoom</string>
 </resources>

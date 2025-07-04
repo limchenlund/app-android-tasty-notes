@@ -29,6 +29,7 @@
         <activity android:name=".activities.RecipeDetailActivity" />
         <activity android:name=".activities.EditRecipeActivity" />
         <activity android:name=".activities.RecipeListActivity" />
+        <activity android:name=".activities.ViewImageActivity" />
     </application>
 
 </manifest>

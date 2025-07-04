@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <com.lund.tastynotes.views.ZoomableImageView
+        android:layout_gravity="center"
+        android:id="@+id/view_image_full_screen_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/image_recipe_image_full_screen" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="start|center_vertical">
+
+        <ImageView
+            android:id="@+id/view_image_back_iv"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/background_circular_button"
+            android:contentDescription="@string/image_back_icon"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+</FrameLayout> 

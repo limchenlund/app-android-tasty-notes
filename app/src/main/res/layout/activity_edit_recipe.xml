@@ -15,6 +15,7 @@
         android:layout_height="50dp">
 
         <ImageView
+            android:contentDescription="@string/image_back_icon"
             android:id="@+id/edit_recipe_back_iv"
             android:src="@drawable/ic_arrow_back"
             android:layout_width="30dp"

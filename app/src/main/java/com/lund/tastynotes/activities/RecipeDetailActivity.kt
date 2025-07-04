@@ -141,8 +141,14 @@ class RecipeDetailActivity : AppCompatActivity() {
                 .load(recipe.imageUri)
                 .placeholder(R.drawable.ic_food_placeholder)
                 .error(R.drawable.ic_food_placeholder)
-                .fitCenter()
+                .centerCrop()
                 .into(this.recipeImageView)
+            
+            // Add click listener to open full screen image
+            this.recipeImageView.setOnClickListener {
+                val intent = ViewImageActivity.newIntent(this, recipe.imageUri)
+                startActivity(intent)
+            }
         } else {
             this.recipeImageView.visibility = View.GONE
         }
