@@ -1,0 +1,199 @@
+{
+  "recipes": [
+    {
+      "name": "Classic Margherita Pizza",
+      "imageUri": "",
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "1 cup warm water",
+        "2 1/4 tsp active dry yeast",
+        "1 tsp salt",
+        "1 tbsp olive oil",
+        "1/2 cup tomato sauce",
+        "8 oz fresh mozzarella",
+        "Fresh basil leaves",
+        "Salt and pepper to taste"
+      ],
+      "steps": [
+        "Mix flour, yeast, and salt in a large bowl",
+        "Add warm water and olive oil, knead for 10 minutes",
+        "Let dough rise for 1 hour in a warm place",
+        "Roll out dough and add tomato sauce",
+        "Top with mozzarella and basil",
+        "Bake at 450°F for 12-15 minutes"
+      ],
+      "recipeTypeId": 4
+    },
+    {
+      "name": "Chicken Tikka Masala",
+      "imageUri": "",
+      "ingredients": [
+        "1 lb chicken breast, cubed",
+        "1 cup yogurt",
+        "2 tbsp tikka masala paste",
+        "1 onion, diced",
+        "2 cloves garlic, minced",
+        "1 inch ginger, grated",
+        "1 can coconut milk",
+        "2 tbsp tomato paste",
+        "Fresh cilantro",
+        "Basmati rice for serving"
+      ],
+      "steps": [
+        "Marinate chicken in yogurt and tikka paste for 30 minutes",
+        "Cook chicken in a hot pan until browned",
+        "Sauté onion, garlic, and ginger until soft",
+        "Add coconut milk and tomato paste",
+        "Simmer for 20 minutes until sauce thickens",
+        "Garnish with cilantro and serve with rice"
+      ],
+      "recipeTypeId": 4
+    },
+    {
+      "name": "Chocolate Chip Cookies",
+      "imageUri": "",
+      "ingredients": [
+        "2 1/4 cups all-purpose flour",
+        "1 cup butter, softened",
+        "3/4 cup granulated sugar",
+        "3/4 cup brown sugar",
+        "2 large eggs",
+        "1 tsp vanilla extract",
+        "1 tsp baking soda",
+        "1/2 tsp salt",
+        "2 cups chocolate chips"
+      ],
+      "steps": [
+        "Preheat oven to 375°F",
+        "Cream butter and sugars until fluffy",
+        "Beat in eggs and vanilla",
+        "Mix in flour, baking soda, and salt",
+        "Stir in chocolate chips",
+        "Drop rounded tablespoons onto baking sheet",
+        "Bake for 9-11 minutes until golden"
+      ],
+      "recipeTypeId": 5
+    },
+    {
+      "name": "Beef Stir Fry",
+      "imageUri": "",
+      "ingredients": [
+        "1 lb beef sirloin, sliced thin",
+        "2 cups mixed vegetables",
+        "3 tbsp soy sauce",
+        "2 tbsp oyster sauce",
+        "1 tbsp cornstarch",
+        "2 cloves garlic, minced",
+        "1 tbsp ginger, grated",
+        "2 tbsp vegetable oil",
+        "Cooked rice for serving"
+      ],
+      "steps": [
+        "Marinate beef in soy sauce and cornstarch for 15 minutes",
+        "Heat oil in wok over high heat",
+        "Stir-fry beef until browned, remove from wok",
+        "Add vegetables and stir-fry for 2-3 minutes",
+        "Return beef to wok, add sauces",
+        "Cook for 1 minute until sauce thickens",
+        "Serve over rice"
+      ],
+      "recipeTypeId": 4
+    },
+    {
+      "name": "Caesar Salad",
+      "imageUri": "",
+      "ingredients": [
+        "1 head romaine lettuce, chopped",
+        "1/2 cup parmesan cheese, grated",
+        "1/2 cup croutons",
+        "2 tbsp lemon juice",
+        "2 tbsp olive oil",
+        "1 clove garlic, minced",
+        "1 tsp Dijon mustard",
+        "Salt and pepper to taste",
+        "Anchovy paste (optional)"
+      ],
+      "steps": [
+        "Wash and chop romaine lettuce",
+        "Make dressing by whisking lemon juice, oil, garlic, and mustard",
+        "Toss lettuce with dressing",
+        "Add parmesan cheese and croutons",
+        "Season with salt and pepper",
+        "Serve immediately"
+      ],
+      "recipeTypeId": 10
+    },
+    {
+      "name": "Spaghetti Carbonara",
+      "imageUri": "",
+      "ingredients": [
+        "1 lb spaghetti",
+        "4 large eggs",
+        "1 cup parmesan cheese, grated",
+        "4 oz pancetta or bacon, diced",
+        "2 cloves garlic, minced",
+        "Black pepper",
+        "Salt for pasta water"
+      ],
+      "steps": [
+        "Cook spaghetti in salted water until al dente",
+        "Meanwhile, cook pancetta until crispy",
+        "Whisk eggs and parmesan in a bowl",
+        "Drain pasta, reserving 1 cup of pasta water",
+        "Add hot pasta to egg mixture, stirring quickly",
+        "Add pancetta and pasta water as needed",
+        "Season with black pepper and serve immediately"
+      ],
+      "recipeTypeId": 4
+    },
+    {
+      "name": "Chicken Noodle Soup",
+      "imageUri": "",
+      "ingredients": [
+        "1 whole chicken, cut up",
+        "2 carrots, chopped",
+        "2 celery stalks, chopped",
+        "1 onion, diced",
+        "8 cups chicken broth",
+        "2 cups egg noodles",
+        "2 tbsp fresh parsley, chopped",
+        "Salt and pepper to taste"
+      ],
+      "steps": [
+        "Simmer chicken in broth for 1 hour",
+        "Remove chicken and shred meat",
+        "Add vegetables to broth and cook for 15 minutes",
+        "Add noodles and cook for 8 minutes",
+        "Return chicken to pot",
+        "Season with salt, pepper, and parsley",
+        "Serve hot"
+      ],
+      "recipeTypeId": 11
+    },
+    {
+      "name": "Chocolate Lava Cake",
+      "imageUri": "",
+      "ingredients": [
+        "4 oz dark chocolate",
+        "1/2 cup butter",
+        "2 large eggs",
+        "2 egg yolks",
+        "1/4 cup sugar",
+        "1/4 cup all-purpose flour",
+        "Butter for ramekins",
+        "Cocoa powder for dusting"
+      ],
+      "steps": [
+        "Preheat oven to 425°F",
+        "Butter and dust 4 ramekins with cocoa powder",
+        "Melt chocolate and butter together",
+        "Whisk eggs, yolks, and sugar until pale",
+        "Fold in melted chocolate mixture",
+        "Gently fold in flour",
+        "Divide batter among ramekins",
+        "Bake for 12-14 minutes until edges are set but center is soft"
+      ],
+      "recipeTypeId": 5
+    }
+  ]
+} 

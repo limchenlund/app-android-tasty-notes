@@ -169,7 +169,7 @@ class RecipeDetailActivity : AppCompatActivity() {
 
     private fun loadRecipeTypeName(recipeTypeId: Int) {
         try {
-            val inputStream: InputStream = assets.open(Constants.RECIPE_FILE_NAME)
+            val inputStream: InputStream = assets.open(Constants.RECIPE_TYPES_FILE_NAME)
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)

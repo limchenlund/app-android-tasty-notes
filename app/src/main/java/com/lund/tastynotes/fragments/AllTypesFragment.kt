@@ -1,6 +1,5 @@
 package com.lund.tastynotes.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -37,7 +36,7 @@ class AllTypesFragment : Fragment() {
 
     private fun setupAdapter() {
         try {
-            val inputStream = requireContext().assets.open(Constants.RECIPE_FILE_NAME)
+            val inputStream = requireContext().assets.open(Constants.RECIPE_TYPES_FILE_NAME)
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)

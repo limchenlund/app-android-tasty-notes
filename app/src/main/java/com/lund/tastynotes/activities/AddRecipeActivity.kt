@@ -1,17 +1,13 @@
 package com.lund.tastynotes.activities
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -87,7 +83,7 @@ class AddRecipeActivity : AppCompatActivity() {
 
     private fun loadRecipeTypes() {
         try {
-            val inputStream: InputStream = assets.open(Constants.RECIPE_FILE_NAME)
+            val inputStream: InputStream = assets.open(Constants.RECIPE_TYPES_FILE_NAME)
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
