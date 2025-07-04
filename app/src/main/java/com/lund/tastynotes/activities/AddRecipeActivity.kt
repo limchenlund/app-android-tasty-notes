@@ -36,7 +36,7 @@ class AddRecipeActivity : AppCompatActivity() {
 
     private var imageUri: Uri? = null
     private lateinit var recipeTypes: List<RecipeType>
-    private lateinit var imagePickerLauncher: ActivityResultLauncher<String>
+    private lateinit var imagePickerLauncher: ActivityResultLauncher<Array<String>>
     private lateinit var viewModel: AddRecipeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,8 +69,12 @@ class AddRecipeActivity : AppCompatActivity() {
     }
 
     private fun setupImagePickerLauncher() {
-        this.imagePickerLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        this.imagePickerLauncher = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
             if (uri != null) {
+                // Take persistent permission so that it can still load the image after app restart
+                val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                contentResolver.takePersistableUriPermission(uri, takeFlags)
+
                 imageUri = uri
                 Glide.with(this@AddRecipeActivity)
                     .load(uri)
@@ -103,7 +107,7 @@ class AddRecipeActivity : AppCompatActivity() {
 
     private fun setupClickListeners() {
         this.pickImageButton.setOnClickListener {
-            this.imagePickerLauncher.launch("image/*")
+            this.imagePickerLauncher.launch(arrayOf("image/*"))
         }
 
         this.saveButton.setOnClickListener {

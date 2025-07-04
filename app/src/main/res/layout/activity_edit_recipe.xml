@@ -72,6 +72,7 @@
                 android:layout_height="wrap_content"/>
 
             <ImageView
+                android:contentDescription="@string/image_recipe_image"
                 android:id="@+id/edit_recipe_image_iv"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"

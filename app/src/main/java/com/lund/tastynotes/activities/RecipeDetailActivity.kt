@@ -3,6 +3,7 @@ package com.lund.tastynotes.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -133,17 +134,17 @@ class RecipeDetailActivity : AppCompatActivity() {
         
         this.recipeNameTextView.text = recipe.name
         
-        // Load image if available
-        // TODO for some reason the image here does not load, to come back and fix it
+        // Load image if available else hide it
         if (!recipe.imageUri.isNullOrBlank()) {
+            this.recipeImageView.visibility = View.VISIBLE
             Glide.with(this@RecipeDetailActivity)
                 .load(recipe.imageUri)
                 .placeholder(R.drawable.ic_food_placeholder)
                 .error(R.drawable.ic_food_placeholder)
-                .centerCrop()
+                .fitCenter()
                 .into(this.recipeImageView)
         } else {
-            this.recipeImageView.setImageResource(R.drawable.ic_food_placeholder)
+            this.recipeImageView.visibility = View.GONE
         }
 
         // Load recipe type name
